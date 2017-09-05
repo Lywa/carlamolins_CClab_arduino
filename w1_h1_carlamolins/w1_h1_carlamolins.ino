@@ -28,7 +28,10 @@ void loop() {
       delay(100);
       digitalWrite(led,LOW);
       delay(50);
-      
+      digitalWrite(led, HIGH); 
+      delay(440);
+      digitalWrite(led,LOW);
+      delay(100);
     
     delay(50); //wait for a short time between actions
     
