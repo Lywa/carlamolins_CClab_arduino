@@ -24,7 +24,7 @@ void loop() {
 
   if (buttonState == HIGH){
     digitalWrite(led, HIGH); // turn the LED on (HIGH is the voltage level)
-    delay(50); //wait for a second
+    delay(50); //wait for a short time between actions
     
    }else{
     digitalWrite(led,LOW); //turn the LED off by making the Voltage LOW
