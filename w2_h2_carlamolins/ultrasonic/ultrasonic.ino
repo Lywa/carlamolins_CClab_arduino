@@ -31,16 +31,16 @@ void loop() {
 
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH turn on the led to check if it works
-  if (buttonState == HIGH) {
+  if (buttonState == LOW) {
     // LED switch on:
     digitalWrite(ledPin, HIGH);
-    delay(1000); 
+    delay(500); 
     }
    
     //  LED switch off
-    if(buttonState= LOW){
+    if(buttonState= HIGH){
     digitalWrite(ledPin, LOW);    
-     delay(1000);
+     delay(500);
     }
   }
 
@@ -59,13 +59,22 @@ void loop() {
   // of the ping to the reception of its echo off of an object.
   pinMode(echoPin, INPUT);
 
+   if (echoPin < 10) {
+    // LED switch on:
+    digitalWrite(ledPin, HIGH);
+    delay(1000); 
+    Serial.println("be careful");
+    }
+   
+    //  LED switch off
+    else if(echoPin>10){
+    digitalWrite(ledPin, LOW);    
+     delay(1000);
+     
+    }
 
   
-
-
-
- 
-  Serial.println();
+  
 
   // a delay in time in order to avoid unstable behavior 
   delay(100);
