@@ -13,7 +13,7 @@
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(50, PIN, NEO_BRG + NEO_KHZ800);
 
 char val; // Data received from the serial port
 //int ledPin = 13; // Set the pin to digital I/O 13
@@ -41,30 +41,50 @@ void loop() {
     colorWipe(strip.Color(255, 0, 0), 50); // Red
 
   }
-  if (val == 'B') { // If G was received
+
+   else if (val == 'Y') { // If Y was received
+    //digitalWrite(ledPin, HIGH); // turn the LED on
+     //Yellow
+    colorWipe(strip.Color(255, 255, 0), 50); // Red
+
+  }
+  else if (val == 'B') { // If B was received
     //digitalWrite(ledPin, HIGH); // turn the LED on
      //GREEN
-    colorWipe(strip.Color(0, 255, 0), 50); // Green
+    colorWipe(strip.Color(0, 0, 255), 50); // Green
+  }
+
+ else if (val == 'C') { // If C was received
+    //digitalWrite(ledPin, HIGH); // turn the LED on
+     //C  yan
+    colorWipe(strip.Color(0, 255, 255), 50); // Green
   }
   
-   if (val == 'G') { // If B was received
+   else if (val == 'G') { // If G was received
     //digitalWrite(ledPin, HIGH); // turn the LED on
      //BLUE
-     colorWipe(strip.Color(0, 0, 255), 50); // Blue
+     colorWipe(strip.Color(0, 255, 0), 50); // Blue
 
    }
    
-    if (val == 'W') { // If H was received
+   else if (val == 'P') { // If P was received
+    //digitalWrite(ledPin, HIGH); // turn the LED on
+     //PINK
+     colorWipe(strip.Color(255, 0, 255), 50); // Blue
+
+   }
+   
+    else if (val == 'W') { // If W was received
     //digitalWrite(ledPin, HIGH); // turn the LED on
      //mainColors();        // Red, Green, Blue, Yellow, Cyan, Purple, White
    colorWipe(strip.Color(255, 255, 255), 50); // White
     }
     
-    if (val == 'L') { // If H was received
+    else if (val == 'L') { // If L was received
     //digitalWrite(ledPin, HIGH); // turn the LED on
      //mainColors();        // Red, Green, Blue, Yellow, Cyan, Purple, White
     
-      rainbowCycle(20);
+     rainbowCycle(4);
       
   //  showSpectrum();    // Gradual fade from Red to Green to Blue to Red
  
